@@ -19,17 +19,17 @@ class Transaction {
   title: string;
 
   @Column()
-  type: string; // 'income' | 'outcome';
+  type: 'income' | 'outcome';
 
   @Column()
   value: number;
 
-  @Column()
-  category_id: string;
-
   @ManyToOne(() => Category)
   @JoinColumn({ name: 'category_id' })
   category: Category;
+
+  @Column()
+  category_id: string;
 
   @CreateDateColumn()
   created_at: Date;

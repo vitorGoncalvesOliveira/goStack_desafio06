@@ -10,7 +10,7 @@ import Transaction from '../models/Transaction';
 interface RequestDTO {
   title: string;
   value: number;
-  type: string;
+  type: 'income' | 'outcome';
   category: string;
 }
 
